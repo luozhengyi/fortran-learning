@@ -1,25 +1,3 @@
-! module mdl_demo
-
-!     implicit none
-
-!     PUBLIC 
-
-
-!     ! type declaration; :: is optional
-!     type, private :: Books
-        
-!         character(len = 50) :: title
-!         character(len = 50) :: author
-!         character(len = 150), private :: subject
-!         integer, private :: book_id
-
-!     end type Books
-
-! end module mdl_demo
-
-
-
-
 program prog_name
 
     use mdl_demo

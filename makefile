@@ -2,9 +2,9 @@ FC := gfortran
 
 BIN_DIR := ./bin
 
-ALL: $(BIN_DIR)/structure.out 	$(BIN_DIR)/variable.out 	$(BIN_DIR)/type-intrinsic.out \
-	 $(BIN_DIR)/constant.out  	$(BIN_DIR)/type-derived.out	$(BIN_DIR)/exec-ctrl.out\
-	 $(BIN_DIR)/attribute.out	$(BIN_DIR)/array.out\
+ALL:  $(BIN_DIR)/structure.out 	$(BIN_DIR)/variable.out 	$(BIN_DIR)/type-intrinsic.out \
+      $(BIN_DIR)/constant.out  	$(BIN_DIR)/type-derived.out	$(BIN_DIR)/exec-ctrl.out\
+      $(BIN_DIR)/attribute.out	$(BIN_DIR)/array.out\
 	 clean
 .PHONY: ALL
 

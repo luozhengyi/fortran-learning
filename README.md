@@ -8,9 +8,11 @@ This project is just for fortran learning<br>
 `[usr@host:~]# apt-get intall gfortran`
 
 
+## add searching path of dynamic library to .bashrc：
+`export LD_LIBRARY_PATH="./bin":$LD_LIBRARY_PATH`
+
 ## compile project:
 `[usr@host:~]# make`
-
 
 
 ## source files:
@@ -33,10 +35,11 @@ This project is just for fortran learning<br>
 3. <font color=#0099ff>*data*</font> keyword;
 4. <font color=#0099ff>*pointer*</font> keyword;
 5. <font color=#0099ff>*target*</font> keyword;
-6. accessibility controling in module;
-7. the usage of varaible with pointer attribute
-8. 
-9. 
+6. <font color=#0099ff>*save*</font> keyword;
+7. <font color=#0099ff>*extends*</font> keyword;
+8. accessibility controling in module;
+9. the usage of varaible with pointer attribute
+
 
 **constant.f95:**<br>
 &ensp;&ensp;&ensp;&ensp;This file demonstrates the constant usage in Fortran. contents including:
@@ -87,10 +90,12 @@ This project is just for fortran learning<br>
 **type-derived.f95:**<br>
 &ensp;&ensp;&ensp;&ensp;This  file demonstrates the derived types in Fortran. contents including:
 1. <font color=#0099ff>*type*</font> keyword;
-2. derived type declaration
-3. derived type variable declaration and components assigning
-4. derived type constructor
-5. 
+2. <font color=#0099ff>*bind*</font> keyword;
+3. derived type declaration
+4. derived type variable declaration and components assigning
+5. derived type constructor
+6. interoperate with c struct
+7. derived type parameters
 
 
 **type-intrinsic.f95:**<br>
@@ -103,3 +108,23 @@ This project is just for fortran learning<br>
 
 **variable.f95:**<br>
 &ensp;&ensp;&ensp;&ensp;This  file demonstrates the variable declaration and initialization in Fortran.
+
+
+**enum.f95:**<br>
+&ensp;&ensp;&ensp;&ensp;This  file demonstrates the enumeration types in Fortran.
+
+
+
+**procedure.f95:**<br>
+&ensp;&ensp;&ensp;&ensp;This file demonstates the characteristics of procedure in Fortran.
+
+
+**fortran-c.f95:**<br>
+&ensp;&ensp;&ensp;&ensp;This  file demonstrates the interoperability between fortran and C, especially, invoking C function in fortran.
+
+**c-fortran.f95:**<br>
+&ensp;&ensp;&ensp;&ensp;This  file demonstrates the interoperability between fortran and C, especially, invoking fortran procedure in C.
+
+
+## lib files:
+

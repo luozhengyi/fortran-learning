@@ -11,10 +11,10 @@ program constant
     character(len = 10), parameter :: ch_out = "hello"
     parameter(MAX_INT16 = 65536)
 
+    
 
     print*, PI
     print*, MAX_INT16
     print*, ch_out
-
 
 end program constant

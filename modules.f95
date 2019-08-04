@@ -25,7 +25,7 @@ module mdl_demo
 
 
     contains
-    subroutine setBookID(id)  ! subroutine: invoked by "Call statement"; could modify the actual argument
+    subroutine setBookID(id)  ! subroutine: invoked by "Call statement"
         implicit none
 
         integer :: id
@@ -34,7 +34,7 @@ module mdl_demo
 
     end subroutine setBookID
 
-    function getBookID()   ! function: can't change actual argument; invoked in an expression
+    function getBookID()   ! function: invoked in an expression
         implicit none
 
         integer :: getBookID

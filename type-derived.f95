@@ -53,3 +53,32 @@ subroutine test_struct()
 
     
 end subroutine test_struct
+
+
+
+subroutine interoperate_C
+    use, intrinsic :: ISO_C_BINDING
+    implicit none
+
+
+    ! define C struct myctype
+    ! typedef struct
+    ! {
+    !     int m,n;
+    !     float r;
+    ! }
+
+    ! declare fortran derived type 
+    
+    type, BIND(C) ::myftype
+            integer(c_int) :: i, j
+            real(c_float) :: s
+    end type myftype    ! myftype could interoperate with myctype
+
+
+end subroutine interoperate_C
+
+
+
+
+

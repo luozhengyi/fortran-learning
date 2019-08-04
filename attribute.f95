@@ -112,14 +112,6 @@ module pointerAttr
         print*, "pointerAttr test1() end"
     end subroutine test1
 
-
-
-
-
-
-
-
-
 end module pointerAttr
 
 
@@ -159,15 +151,85 @@ subroutine test_dataAttr()
 end subroutine test_dataAttr
 
 
+module saveAttr
+	type INITIALIZED_type
+		integer :: int_var = 1 	! Default initialization
+	end type INITIALIZED_type
+	save :: svd1, svd2
+	integer :: svd1, usv1
+	type(INITIALIZED_type) :: svd2, usv2
+	allocatable :: svd1(:), svd2(:), usv1(:), usv2(:)
+end module saveAttr
+
+
+subroutine test_saveAttr1
+    use saveAttr
+    print*, allocated(svd1), allocated(svd2), &
+            allocated(usv1), allocated(usv2)
+    IF (.NOT. allocated(svd1)) allocate(svd1(10))
+    IF (.NOT. allocated(svd2)) allocate(svd2(10))
+    IF (.NOT. allocated(usv1)) allocate(usv1(10))
+    IF (.NOT. allocated(usv2)) allocate(usv2(10))
+end subroutine test_saveAttr1
+
+
+subroutine test_saveAttr2
+    type INITIALIZED_type
+		integer :: int_var = 1 	! Default initialization
+	end type INITIALIZED_type
+	save :: svd1, svd2
+	integer :: svd1, usv1
+	type(INITIALIZED_type) :: svd2, usv2
+	allocatable :: svd1(:), svd2(:), usv1(:), usv2(:)
+
+    print*, allocated(svd1), allocated(svd2), &
+            allocated(usv1), allocated(usv2)
+    IF (.NOT. allocated(svd1)) allocate(svd1(10))
+    IF (.NOT. allocated(svd2)) allocate(svd2(10))
+    IF (.NOT. allocated(usv1)) allocate(usv1(10))
+    IF (.NOT. allocated(usv2)) allocate(usv2(10))
+end subroutine test_saveAttr2
+
+
+subroutine test_extendsAttr()
+    implicit none
+    type :: base
+        integer :: b_var1
+        integer :: b_var2
+    end type base
+
+    type, extends(base) :: child
+        integer :: c_var1
+        integer :: c_var2
+    end type child
+    
+    type(child) :: child_obj
+    child_obj%b_var1 = 1
+    child_obj%c_var1 = 2
+    print*, child_obj%b_var1
+    print*, child_obj%c_var1
+
+
+end subroutine test_extendsAttr
+
+
 
 program attribute
 
     implicit none
+    integer :: int_res
+
 
     call test_accessAttr()
     call test_pointerAttr()
     call test_dataAttr()
 
+    call test_saveAttr1()
+    call test_saveAttr1()
 
+    call test_saveAttr2()
+    call test_saveAttr2()
 
-end program
+    call test_extendsAttr()
+
+end program attribute
